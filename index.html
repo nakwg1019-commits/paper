@@ -19,17 +19,17 @@
         .profile-header { display: flex; align-items: flex-start; gap: 25px; border-bottom: 1px solid #e0e0e0; padding-bottom: 25px; margin-bottom: 25px; }
         .profile-img { width: 110px; height: 110px; border-radius: 50%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .profile-img img { width: 100%; height: 100%; object-fit: contain; object-position: center center; }
-        .profile-name { font-size: 1.6rem; font-weight: bold; color: #1a0dab; margin-bottom: 4px; }
+        .profile-name { font-size: 1.6rem; font-weight: bold; color: #222; margin-bottom: 4px; }
         .profile-affil { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
         .profile-affil a { color: #1a0dab; text-decoration: none; }
         .profile-affil a:hover { text-decoration: underline; }
-        .profile-interests { font-size: 0.9rem; color: #1a0dab; }
+        .profile-interests { font-size: 0.9rem; color: #555; }
         .profile-interests span { margin-right: 12px; }
 
         /* 탭 메뉴 스타일 */
         .tabs { display: flex; gap: 20px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 0.95rem; font-weight: 600; color: #555; }
         .tab { padding-bottom: 8px; cursor: pointer; border-bottom: 3px solid transparent; }
-        .tab.active { color: #1a0dab; border-bottom: 3px solid #1a0dab; }
+        .tab.active { color: #222; border-bottom: 3px solid #222; }
 
         /* 논문 목록 테이블 스타일 */
         .paper-table { width: 100%; border-collapse: collapse; }
@@ -45,7 +45,7 @@
         .paper-detail { display: none; background: #fff; padding: 10px 0; }
         .back-btn { background: #f8f9fa; border: 1px solid #dadce0; color: #3c4043; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 500; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 5px; }
         .back-btn:hover { background: #f1f3f4; }
-        .paper-type { display: inline-block; background: #e8f0fe; color: #1967d2; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; border-radius: 4px; margin-bottom: 12px; }
+        .paper-type { display: inline-block; background: #f1f3f4; color: #3c4043; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; border-radius: 4px; margin-bottom: 12px; }
         .detail-title-ko { font-size: 1.3rem; font-weight: bold; color: #202124; margin-bottom: 4px; }
         .detail-title-en { font-size: 0.95rem; color: #5f6368; margin-bottom: 20px; font-style: italic; }
         .meta-row { display: flex; font-size: 0.9rem; margin-bottom: 8px; }
@@ -53,7 +53,7 @@
         .meta-value { color: #202124; }
         .abstract-box { margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #3c4043; line-height: 1.6; }
         .abstract-title { font-weight: bold; margin-bottom: 6px; color: #202124; }
-        .keywords { margin-top: 12px; font-size: 0.85rem; color: #1a0dab; font-weight: 500; }
+        .keywords { margin-top: 12px; font-size: 0.85rem; color: #5f6368; font-weight: 500; }
         .btn-download { display: inline-block; margin-top: 20px; background: #1a73e8; color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
         .btn-download:hover { background: #1557b0; }
     </style>
@@ -63,7 +63,7 @@
     <!-- 프로필 영역 -->
     <div id="mainApp">
         <div class="profile-header">
-            <div class="profile-img"><img src="profile.png" alt="프로필 사진"></div>
+            <div class="profile-img"><img src="profile.jpg" alt="프로필 사진"></div>
             <div>
                 <div class="profile-name">WonGyeong Kim</div>
                 <div class="profile-affil"><a href="https://www.dankook.ac.kr" target="_blank">Dankook University</a></div>
@@ -109,8 +109,7 @@
             
             <div class="paper-type">학술대회논문</div>
             <div class="detail-title-ko">자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계</div>
-            <div class="detail-title-en">Algorithm Design for Phonological Rule Extraction and
-Articulatory Mapping based on Natural Language</div>
+            <div class="detail-title-en">Design of Natural Language-Based Korean Phonological Rule Extraction and Articulation Mapping Algorithms</div>
             
             <div class="meta-row">
                 <div class="meta-label">저자정보</div>
