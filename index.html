@@ -2,17 +2,160 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계</title>
+    <title>WonGyeong Kim - Google Scholar Profile</title>
+    <!-- 구글 스콜라 메타태그 (색인용) -->
     <meta name="citation_title" content="자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계">
     <meta name="citation_author" content="김원경">
     <meta name="citation_publication_date" content="2026/10/07">
     <meta name="citation_conference_title" content="제38회 한글 및 한국어 정보처리 학술대회 논문집">
+    <meta name="citation_volume" content="38">
+    <meta name="citation_firstpage" content="820">
+    <meta name="citation_lastpage" content="824">
     <meta name="citation_pdf_url" content="https://nakwg1019-commits.github.io/paper/HCLT2026_820-824.pdf">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 30px 20px; line-height: 1.5; color: #222; background-color: #fff; }
+        
+        /* 프로필 헤더 섹션 */
+        .profile-header { display: flex; align-items: flex-start; gap: 25px; border-bottom: 1px solid #e0e0e0; padding-bottom: 25px; margin-bottom: 25px; }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; background: #ddd; object-fit: cover; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #666; font-weight: bold; overflow: hidden; }
+        .profile-name { font-size: 1.6rem; font-weight: bold; color: #1a0dab; margin-bottom: 4px; }
+        .profile-affil { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
+        .profile-affil a { color: #1a0dab; text-decoration: none; }
+        .profile-affil a:hover { text-decoration: underline; }
+        .profile-interests { font-size: 0.9rem; color: #1a0dab; }
+        .profile-interests span { margin-right: 12px; }
+
+        /* 탭 메뉴 스타일 */
+        .tabs { display: flex; gap: 20px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 0.95rem; font-weight: 600; color: #555; }
+        .tab { padding-bottom: 8px; cursor: pointer; border-bottom: 3px solid transparent; }
+        .tab.active { color: #1a0dab; border-bottom: 3px solid #1a0dab; }
+
+        /* 논문 목록 테이블 스타일 */
+        .paper-table { width: 100%; border-collapse: collapse; }
+        .paper-table th { text-align: left; font-size: 0.85rem; color: #666; font-weight: 600; border-bottom: 1px solid #e0e0e0; padding-bottom: 8px; }
+        .paper-table td { padding: 14px 0; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+        .list-title { font-size: 1rem; font-weight: bold; color: #1a0dab; cursor: pointer; margin-bottom: 3px; }
+        .list-title:hover { text-decoration: underline; }
+        .list-authors { font-size: 0.85rem; color: #444; margin-bottom: 2px; }
+        .list-venue { font-size: 0.85rem; color: #666; }
+        .list-year { text-align: right; font-size: 0.9rem; color: #444; width: 60px; }
+
+        /* 상세 페이지 스타일 (기본 숨김) */
+        .paper-detail { display: none; background: #fff; padding: 10px 0; }
+        .back-btn { background: #f8f9fa; border: 1px solid #dadce0; color: #3c4043; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 500; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 5px; }
+        .back-btn:hover { background: #f1f3f4; }
+        .paper-type { display: inline-block; background: #e8f0fe; color: #1967d2; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; border-radius: 4px; margin-bottom: 12px; }
+        .detail-title-ko { font-size: 1.3rem; font-weight: bold; color: #202124; margin-bottom: 4px; }
+        .detail-title-en { font-size: 0.95rem; color: #5f6368; margin-bottom: 20px; font-style: italic; }
+        .meta-row { display: flex; font-size: 0.9rem; margin-bottom: 8px; }
+        .meta-label { width: 90px; color: #5f6368; font-weight: 600; flex-shrink: 0; }
+        .meta-value { color: #202124; }
+        .abstract-box { margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #3c4043; line-height: 1.6; }
+        .abstract-title { font-weight: bold; margin-bottom: 6px; color: #202124; }
+        .keywords { margin-top: 12px; font-size: 0.85rem; color: #1a0dab; font-weight: 500; }
+        .btn-download { display: inline-block; margin-top: 20px; background: #1a73e8; color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .btn-download:hover { background: #1557b0; }
+    </style>
 </head>
 <body>
-    <h1>자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계</h1>
-    <p>저자: 김원경</p>
-    <p>학회: 제38회 한글 및 한국어 정보처리 학술대회</p>
-    <p><a href="HCLT2026_820-824.pdf">논문 PDF</a></p>
+
+    <!-- 프로필 영역 -->
+    <div id="mainApp">
+        <div class="profile-header">
+            <div class="profile-img">WK</div>
+            <div>
+                <div class="profile-name">WonGyeong Kim</div>
+                <div class="profile-affil"><a href="https://www.dankook.ac.kr" target="_blank">Dankook University</a></div>
+                <div class="profile-interests">
+                    <span>NLP</span>
+                    <span>Data Engineering</span>
+                    <span>Data Visualization / Graphics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 탭 메뉴 -->
+        <div class="tabs">
+            <div class="tab active">학술자료</div>
+        </div>
+
+        <!-- 목록 화면 -->
+        <div id="listView">
+            <table class="paper-table">
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th style="text-align: right;">연도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="list-title" onclick="showDetail('paper1')">자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계</div>
+                            <div class="list-authors">김원경</div>
+                            <div class="list-venue">제38회 한글 및 한국어 정보처리 학술대회 논문집</div>
+                        </td>
+                        <td class="list-year">2026</td>
+                    </tr>
+                    <!-- 추후 새 논문 추가 시 위 tr 태그 전체를 복사해서 아래에 추가하세요 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 상세 페이지 화면 (기본 숨김) -->
+        <div id="paper1" class="paper-detail">
+            <button class="back-btn" onclick="showList()">&#x276E; 목록으로 돌아가기</button>
+            
+            <div class="paper-type">학술대회논문</div>
+            <div class="detail-title-ko">자연어 기반 한국어 음운 변동 추출 및 조음 매핑 알고리즘 설계</div>
+            <div class="detail-title-en">Design of Natural Language-Based Korean Phonological Rule Extraction and Articulation Mapping Algorithms</div>
+            
+            <div class="meta-row">
+                <div class="meta-label">저자정보</div>
+                <div class="meta-value">김원경</div>
+            </div>
+            <div class="meta-row">
+                <div class="meta-label">저널정보</div>
+                <div class="meta-value">한글 및 한국어 정보처리 학술대회 &gt; 제38회 한글 및 한국어 정보처리 학술대회 논문집</div>
+            </div>
+            <div class="meta-row">
+                <div class="meta-label">발행연도</div>
+                <div class="meta-value">2026.10</div>
+            </div>
+            <div class="meta-row">
+                <div class="meta-label">수록면</div>
+                <div class="meta-value">820 - 824 (5page)</div>
+            </div>
+
+            <div class="abstract-box">
+                <div class="abstract-title">초록</div>
+                <p>본 연구는 외국인 한국어 학습자 및 언어 장애인 등을 위한 지능형 조음 시각화 시스템의 핵심 엔진으로서 자연어 기반 조음 파라미터 추출 알고리즘을 구현하고 검증하였다. 기존의 입 모양 중심 시각화는 혀의 위치나 연구개의 상태 등 내부 조음 기관의 변화를 보여주는 데 한계가 있었다. 본 연구에서는 G2P 엔진을 활용하여 문장 내 음운 변동 규칙을 실시간으로 추론하고, 이를 조음 음성학 기반의 수치 파라미터로 변환하는 파이프라인을 구성하였다. 특히 설계된 파라미터가 가상 모델의 조음 위치를 정교하게 제어할 수 있도록 데이터 매핑 규격을 정의하였다. 또한 음소 단위의 시계열 데이터 구조를 설계하여 조음 과정을 시간적 흐름으로 모델링하였으며, 이중모음은 보간(interpolation)을 통해 연속적인 조음 이동 궤적으로 표현하였다. 이러한 접근은 향후 3D 기반 시각화 시스템과의 연계를 통해 보다 직관적인 발음 피드백을 제공할 수 있는 기반 기술로 활용될 수 있다는 점에서 의의를 가진다.</p>
+                <div class="keywords">주제어: G2P기반 한국어 음운변동, 조음 매핑, 이중모음 보간, 시계열 파라미터</div>
+            </div>
+
+            <div>
+                <a href="HCLT2026_820-824.pdf" target="_blank" class="btn-download">논문 PDF 다운로드</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDetail(paperId) {
+            document.getElementById('listView').style.display = 'none';
+            document.querySelector('.tabs').style.display = 'none';
+            document.getElementById(paperId).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showList() {
+            const details = document.getElementsByClassName('paper-detail');
+            for (let i = 0; i < details.length; i++) {
+                details[i].style.display = 'none';
+            }
+            document.getElementById('listView').style.display = 'block';
+            document.querySelector('.tabs').style.display = 'flex';
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
